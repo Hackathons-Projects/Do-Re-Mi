@@ -1,4 +1,4 @@
-# StormHacks
+# Do-Re-Mi Hacks-II
 
 * [Description](#description)
 * [Features](#features)
