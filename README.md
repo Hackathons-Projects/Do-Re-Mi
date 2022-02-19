@@ -5,7 +5,7 @@
 * [Setup](#setup)
 
 ## Description
-A command line game application to play riddles and get insights about mental health.
+A command line game application to play riddles and get educated about mental health.
 
 ## Features
 
@@ -29,7 +29,7 @@ $ npm install i
 $ node index.js
 ```
 6. Move to `client` directory.
-7. Run this in client directory to install all packages.
+7. Run this command to install all packages.
 ```
 $ npm install i
 ```
