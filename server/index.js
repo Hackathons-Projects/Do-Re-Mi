@@ -9,15 +9,21 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
 app.get("/quote", (req, res) => {
-    res.send(quote)
+    const maxi = Object.keys(quote).length;
+    const random = Math.floor(Math.random() * (maxi - 1) + 1);
+    res.send(quote[random])
 });
 
 app.get("/mental", (req, res) => {
-    res.send(mental)
+    const maxi = Object.keys(mental).length;
+    const random = Math.floor(Math.random() * (maxi - 1) + 1);
+    res.send(mental[random])
 });
 
 app.get("/riddle", (req, res) => {
-    res.send(riddle)
+    const maxi = Object.keys(riddle).length;
+    const random = Math.floor(Math.random() * (maxi - 1) + 1);
+    res.send(riddle[random])
 });
 
 app.listen(PORT, () => console.log(`Server is Running at Port: ${PORT}`))

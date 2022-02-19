@@ -2,7 +2,7 @@
     "1":{
         "problem": "I have 80 of them and you, despite being grounded, only have artificial ones. Who I am?",
         "answer": "Jupiter",
-        "hint": ""
+        "hint": "_ _ _ _ _ _ _"
     },
     "2":{
         "problem": "Why did the cow become an astronaut? So it could walk in the…",
@@ -12,6 +12,6 @@
     "3":{
         "problem": "How does Einstein begin a story? Once upon a…",
         "answer": "space-time",
-        "hint": ""
+        "hint": "_ _ _ _ _ - _ _ _ _"
     }
 }
