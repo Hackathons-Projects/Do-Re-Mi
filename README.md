@@ -23,21 +23,20 @@ Follow these steps to setup.
 ```
 $ npm install i
 ```
-3. Rename `server/env/.env.sample` to `server/env/.env`.
-4. Run this to start server on port 5000.
+3. Run this to start server on port 5000.
 ```
 $ node index.js
 ```
-6. Move to `client` directory.
-7. Run this command to install all packages.
+4. Move to `client` directory.
+5. Run this command to install all packages.
 ```
 $ npm install i
 ```
-7. Change permission of `client/index.js` file to execute.
+6. Change permission of `client/index.js` file to execute.
 ```
 $ sudo chmod +x index.js
 ```
-8. Move to `client` directory and run `index.js` file to start playing game 
+7. Move to `client` directory and run `index.js` file to start playing game 
 ```
 $ ./index.js
 ```
