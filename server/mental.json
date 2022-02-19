@@ -1,32 +1,32 @@
 {
     "1":{
         "problem": "Syntoms include feeling low and a desire to not to anything. The best medicine to get enough sleep and eat healthy",
-        "answer": "Depression",
+        "answer": "depression",
         "hint": "_ _ _ _ _ _ _ _ _ _"
     },
     "2":{
         "problem": "Feeling that one has when starting a new task or test with a fear of what it is about to come, eventually leading to stress. Some of the symptoms include increased heart rate and having difficulty to sleep",
-        "answer": "Anxiety",
+        "answer": "anxiety",
         "hint": "_ _ _ _ _ _ _"
     },
     "3":{
         "problem": "Unusual shift in mood with highs and lows which can be caused due to genetics and stress among others",
-        "answer": "Bipolar Disorder",
+        "answer": "bipolar disorder",
         "hint": "_ _ _ _ _ _ _   _ _ _ _ _ _ _ _"
     },
     "4":{
         "problem": "Action that helps an individual improve their relation with others and improve their well-being",
-        "answer": "Connections",
+        "answer": "connections",
         "hint": "_ _ _ _ _ _ _ _ _ _ _"
     },
     "5":{
         "problem": "Simple techique used to alleviate stress and calm during stressful situations",
-        "answer": "Deep Breathing",
+        "answer": "deep breathing",
         "hint": "_ _ _ _   _ _ _ _ _ _ _ _ _"
     },
     "6":{
         "problem": "Which action causes one to die 7 years before someone else who doesn’t perform that action",
-        "answer": "Night Shifts",
+        "answer": "night shifts",
         "hint": "_ _ _ _ _   _ _ _ _ _ _"
     }
 }

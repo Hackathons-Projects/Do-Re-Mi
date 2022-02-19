@@ -2,11 +2,12 @@
 
 const axios = require('axios');
 const chalk = require('chalk');
+const inquirer = require('inquirer');
 const args = process.argv
 const commands = ['riddle', 'quote', 'mental', 'bot', 'help']
 const quote_url = "http://localhost:5000/quote";
-const quote_mental = "http://localhost:5000/mental";
-const quote_riddle = "http://localhost:5000/riddle";
+const mental_url = "http://localhost:5000/mental";
+const riddle_url = "http://localhost:5000/riddle";
 
 const usage = function() {
     const usageText = `
@@ -32,52 +33,139 @@ function errorLog(error) {
     console.log(eLog)
 }
 
-function getQuotes(){
-    /*axios({
-        method: 'get',
-        url: quote_url,
-        headers: { 'Accept': 'application/json' },
-      }).then(res => {
-        const quote = res.data.problem
-        const author = res.data.answer
-        const log = chalk.green(`${quote} - ${author}`)
-        console.log(log)
-      }).catch(err => {
+async function getQuotes(){
+    try{
+        let res = await axios({
+            method: 'get',
+            url: quote_url,
+            headers: { 'Accept': 'application/json' },
+        })
+        const problem = res.data.problem
+        const answer  = res.data.answer
+        const hint = res.data.hint
+        let questions = [];
+        questions.push({
+            name: 'prob',
+            type: 'input',
+            message: `${problem}: (HINT: ${hint}) : `,
+            validate: function (value) {
+                if(answer==value){
+                    return true;
+                }
+                else {
+                    var temp = ""
+                    for(let i=0;i<Math.min(answer.length, value.length);i++){
+                        if(answer[i]==value[i]){
+                            let eLog = chalk.green(value[i])
+                            temp+=eLog
+                        }
+                        else{
+                            let eLog = chalk.red(value[i])
+                            temp+=eLog
+                        }
+                    }
+                    return `${temp}: Wrong answer! Try Again`;
+                }
+            },
+        });
+        await inquirer.prompt(questions);
+        let eLog = chalk.green("Congratulations! you cracked it!!")
+        console.log(eLog)
+    }
+    catch(err) {
         const log = chalk.red(err)
         console.log(log)
-    })*/
+    } 
 }
 
-function mentalHealthGames(){
-    /*axios({
-        method: 'get',
-        url: quote_mental,
-        headers: { 'Accept': 'application/json' },
-      }).then(res => {
-        const quote = res.data.problem
-        const author = res.data.answer
-        const log = chalk.green(`${quote} - ${author}`)
-        console.log(log)
-      }).catch(err => {
+async function mentalHealthGames(){
+    try{
+        let res = await axios({
+            method: 'get',
+            url: mental_url,
+            headers: { 'Accept': 'application/json' },
+        })
+        const problem = res.data.problem
+        const answer  = res.data.answer
+        const hint = res.data.hint
+        let questions = [];
+        questions.push({
+            name: 'prob',
+            type: 'input',
+            message: `${problem}: (HINT: ${hint}) : `,
+            validate: function (value) {
+                if(answer==value){
+                    return true;
+                }
+                else {
+                    var temp = ""
+                    for(let i=0;i<Math.min(answer.length, value.length);i++){
+                        if(answer[i]==value[i]){
+                            let eLog = chalk.green(value[i])
+                            temp+=eLog
+                        }
+                        else{
+                            let eLog = chalk.red(value[i])
+                            temp+=eLog
+                        }
+                    }
+                    return `${temp}: Wrong answer! Try Again`;
+                }
+            },
+        });
+        await inquirer.prompt(questions);
+        let eLog = chalk.green("Congratulations! you cracked it!!")
+        console.log(eLog)
+    }
+    catch(err) {
         const log = chalk.red(err)
         console.log(log)
-    })*/
+    }
 }
 
-function playriddle(){
-    /*axios({
-        method: 'get',
-        url: quote_riddle,
-        headers: { 'Accept': 'application/json' },
-      }).then(res => {
-        const quote = res.data.problem
-        const author = res.data.answer
-        const log = chalk.green(`${quote} - ${author}`)
-        console.log(log)
-      }).catch(err => {
+async function playriddle(){
+    try{
+        let res = await axios({
+            method: 'get',
+            url: riddle_url,
+            headers: { 'Accept': 'application/json' },
+        })
+        const problem = res.data.problem
+        const answer  = res.data.answer
+        const hint = res.data.hint
+        let questions = [];
+        questions.push({
+            name: 'prob',
+            type: 'input',
+            message: `${problem}: (HINT: ${hint}) : `,
+            validate: function (value) {
+                if(answer==value){
+                    return true;
+                }
+                else {
+                    var temp = ""
+                    for(let i=0;i<Math.min(answer.length, value.length);i++){
+                        if(answer[i]==value[i]){
+                            let eLog = chalk.green(value[i])
+                            temp+=eLog
+                        }
+                        else{
+                            let eLog = chalk.red(value[i])
+                            temp+=eLog
+                        }
+                    }
+                    return `${temp}: Wrong answer! Try Again`;
+                }
+            },
+        });
+        await inquirer.prompt(questions);
+        let eLog = chalk.green("Congratulations! you cracked it!!")
+        console.log(eLog)
+    }
+    catch(err) {
         const log = chalk.red(err)
         console.log(log)
-    })*/
+    }
 }
   
 if (args.length > 3) {
@@ -103,7 +191,4 @@ switch(args[2]) {
     case 'mental':
         mentalHealthGames()
         break
-    default:
-        errorLog('invalid command passed')
-        usage()
 }
