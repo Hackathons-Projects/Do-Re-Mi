@@ -27,7 +27,7 @@ $ npm install i
 ```
 $ node index.js
 ```
-4. Move to `client` directory.
+4. Open new terminal and move to `client` directory.
 5. Run this command to install all packages.
 ```
 $ npm install i
