@@ -9,10 +9,9 @@ A command line game application to play riddles and get educated about mental he
 
 ## Features
 
-* **Web terminal as a GUI**
 * **Play more than 20 riddles**
-* **Games and other exciting stuffs.**
-* **Get educated toward mental health issues and its solutions.**
+* **Games and other exciting stuffs**
+* **Get educated towards mental health issues and its solutions**
 
 ## Setup
 
@@ -38,5 +37,5 @@ $ sudo chmod +x index.js
 ```
 7. Move to `client` directory and run `index.js` file to start playing game 
 ```
-$ ./index.js
+$ ./index.js help
 ```
