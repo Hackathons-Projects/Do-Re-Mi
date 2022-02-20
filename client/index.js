@@ -2,9 +2,10 @@
 
 const axios = require('axios');
 const chalk = require('chalk');
+const Canvas = require('terminal-canvas');
 const inquirer = require('inquirer');
 const args = process.argv
-const commands = ['riddle', 'quote', 'mental', 'bot', 'help']
+const commands = ['riddle', 'quote', 'mental', 'bot', 'help', 'play']
 const quote_url = "http://localhost:5000/quote";
 const mental_url = "http://localhost:5000/mental";
 const riddle_url = "http://localhost:5000/riddle";
@@ -18,6 +19,7 @@ const usage = function() {
   
       commands can be:
   
+      play:        Play song
       riddle:      play riddles
       quote:       guess who said the quote
       mental:      get educated about mental health issues and its solutions through games
@@ -167,6 +169,10 @@ async function playriddle(){
         console.log(log)
     }
 }
+
+async function playSong(){
+    
+}
   
 if (args.length > 3) {
     errorLog(`Only one argument can be accepted`)
@@ -190,5 +196,8 @@ switch(args[2]) {
         break
     case 'mental':
         mentalHealthGames()
+        break
+    case 'play':
+        playSong()
         break
 }
