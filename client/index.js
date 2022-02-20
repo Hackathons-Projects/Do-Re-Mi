@@ -2,10 +2,11 @@
 
 const axios = require('axios');
 const chalk = require('chalk');
-const Canvas = require('terminal-canvas');
+//const Audic = require('audic');
 const inquirer = require('inquirer');
 const args = process.argv
 const commands = ['riddle', 'quote', 'mental', 'bot', 'help', 'play']
+const notes = ['A', 'Ab', 'B', 'Bb', 'C', 'D', 'Db', 'E', 'Eb', 'F', 'G', 'Gb']
 const quote_url = "http://localhost:5000/quote";
 const mental_url = "http://localhost:5000/mental";
 const riddle_url = "http://localhost:5000/riddle";
@@ -25,6 +26,19 @@ const usage = function() {
       mental:      get educated about mental health issues and its solutions through games
       bot:         talk to a bot about mental health issue
       help:        used to print the usage guide
+    `
+  
+    console.log(usageText)
+}
+
+const guide = function() {
+    const usageText = `
+
+    usage:
+      ./index.js play <notes>
+  
+      notes can be: A, Ab, B, Bb, C, D, Db, E, Eb, F, G, Gb.
+
     `
   
     console.log(usageText)
@@ -171,10 +185,32 @@ async function playriddle(){
 }
 
 async function playSong(){
-    
+    for(let i=0;i<args[3].length;i++){
+        if (notes.indexOf(args[3][i]) == -1) {
+            if (i<args[3].length-1&&notes.indexOf(args[3][i]+args[3][i+1]) == -1) {
+                errorLog('Invalid command passed')
+                guide
+                break;
+            }
+            const audic = new Audic(`./notes/${args[3][i]+audic[3][i+1]}`);
+            await audic.play();
+
+            audic.addEventListener('ended', () => {
+                audic.destroy();
+            });
+        }
+        else{
+            const audic = new Audic(`./notes/${args[3][i]}`);
+            await audic.play();
+
+            audic.addEventListener('ended', () => {
+                audic.destroy();
+            });
+        }
+    }
 }
   
-if (args.length > 3) {
+if (args.length > 4) {
     errorLog(`Only one argument can be accepted`)
     usage()
 }

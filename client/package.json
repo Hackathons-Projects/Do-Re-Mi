@@ -9,9 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "audic": "^3.0.0",
     "axios": "^0.26.0",
     "chalk": "^2.4.1",
     "inquirer": "^8.2.0",
+    "sound-play": "^1.1.0",
     "terminal-canvas": "^3.1.2"
   }
 }
